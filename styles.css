@@ -1,0 +1,191 @@
+/* Global Settings */
+
+html {
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: hsl(0, 0%, 93%);
+    background-color: hsl(216, 12%, 8%);
+}
+
+.rating_component {
+    width: 26.66rem;
+    height: 26.66rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: hsl(213, 19%, 18%);
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.rating_component img {
+    min-width: 16px;
+    min-height: 16px;
+
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: hsl(213, 19%, 22%);
+}
+
+.rating_component h1 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.rating_component p {
+    color: hsl(217, 12%, 63%);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.rating_component button {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 93%);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.rating_component button:active {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(25, 97%, 53%);
+}
+
+.rating_component button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255,255,255, 0.5);
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.7rem;
+
+    counter-reset: rating;
+}
+
+.rating div {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: relative;
+    border-radius: 50%;
+    background-color: hsl(213, 19%, 22%);
+
+    counter-increment: rating;
+}
+
+.rating div:hover {
+    cursor: pointer;
+    background-color: hsl(213, 19%, 35%);
+}
+
+.rating div:active {
+    background-color: hsl(25, 97%, 53%);
+}
+
+.rating div::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: counter(rating);
+    color: hsl(217, 12%, 63%);
+}
+
+.rating div:hover::before {
+    color: hsl(0, 0%, 100%);
+}
+
+/* Thank U State */
+
+.thank_u {
+    width: 26.66rem;
+    height: 26.66rem;
+    padding: 2.2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: hsl(213, 19%, 18%);
+
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+}
+
+.result {
+    margin-top: 2.2rem;
+    margin-bottom: 2.2rem;
+    padding: 0.5rem 1.5rem;
+    background-color: hsl(213, 19%, 22%);
+    color: hsl(25, 97%, 53%);
+    border-radius: 2rem;
+}
+
+.thank_u img {
+    margin-top: 0.3rem;
+}
+
+.thank_u h1 {
+    margin-bottom: 1rem;
+}
+
+.thank_text {
+    line-height: 1.5;
+    color: hsl(217, 12%, 63%)
+}
+
+/* Hidden */
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .thank_u {
+        width: 21.9rem;
+        height: auto;
+        margin: 1.5rem;
+    }
+
+    /* .thank_u img {
+        margin-top: 0.8rem;
+    } */
+
+    .rating_component {
+        width: 21.9rem;
+        height: auto;
+        margin: 1.5rem;
+    }
+
+    .rating div {
+        width: 3rem;
+        height: 3rem;
+    }
+
+}
